@@ -16,52 +16,52 @@ This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on
 
 ## Audio samples (Japanese)
 
-- **Groundtruth**: Target speech downsampled to 24k Hz.
+- **Target**: Target speech downsampled to 24k Hz.
 - **Baseline**: Baseline system (Transformer-TTS + Parallel WaveGAN).
-- **DSF128 Reconst**: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 128.
-- **DSF256 Reconst**: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 256.
-- **DSF128 Raw**: The proposed method with downsampling factor = 128 and raw discrete symbols as the target of the NMT model.
-- **DSF256 Raw**: The proposed method with downsampling factor = 256 and raw discrete symbols as the target of the NMT model.
-- **DSF128 SW256**: The proposed method with downsampling factor = 128 and subword units (#subword units = 256) as the target of the NMT model.
-- **DSF256 SW256**: The proposed method with downsampling factor = 256 and subword units (#subword units = 256) as the target of the NMT model.
+- **Reconst (DSF128)**: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 128.
+- **Reconst (DSF256)**: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 256.
+- **Propoed (DSF128, Raw)**: The proposed method with downsampling factor = 128 and raw discrete symbols as the target of the NMT model.
+- **Propoed (DSF256, Raw)**: The proposed method with downsampling factor = 256 and raw discrete symbols as the target of the NMT model.
+- **Propoed (DSF128, SW256)**: The proposed method with downsampling factor = 128 and subword units (#subword units = 256) as the target of the NMT model.
+- **Propoed (DSF256, SW256)**: The proposed method with downsampling factor = 256 and subword units (#subword units = 256) as the target of the NMT model.
 
 **軽妙洒脱なナレーションから、情緒感溢れる語りまで、幅広い表現力を持つ。**
 
 |     |     |
 | --- | --- |
-| **Groundtruth** | **Baseline** |
+| **Target** | **Baseline** |
 |<audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_011.wav"/></audio>|<audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_011.wav"/></audio>| |
-| **DSF256 Reconst** | **DSF128 Reconst** |
+| **Reconst (DSF256)** | **Reconst (DSF128)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_011.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_011.wav"/></audio>|
-| **DSF256 Raw** | **DSF128 Raw** |
+| **Propoed (DSF256, Raw)** | **Propoed (DSF128, Raw)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_011.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_011.wav"/></audio>|
-| **DSF256 SW256** | **DSF128 SW256** |
+| **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_011.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_011.wav"/></audio>|
 
 **当時、あやしいワールドに常駐していた擬古猫が、空白にて発表。**
 
 |     |     |
 | --- | --- |
-| **Groundtruth** | **Baseline** |
+| **Target** | **Baseline** |
 |<audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_053.wav"/></audio>|<audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_053.wav"/></audio>| |
-| **DSF256 Reconst** | **DSF128 Reconst** |
+| **Reconst (DSF256)** | **Reconst (DSF128)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_053.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_053.wav"/></audio>|
-| **DSF256 Raw** | **DSF128 Raw** |
+| **Propoed (DSF256, Raw)** | **Propoed (DSF128, Raw)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_053.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_053.wav"/></audio>|
-| **DSF256 SW256** | **DSF128 SW256** |
+| **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_053.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_053.wav"/></audio>|
 
 **裕福なニューヨーカー達は、グレーヴセンド、競馬場や、シープシェッドベイ、競馬場などに集い、海沿いの高級レストランや、ホテルを利用した。**
 
 |     |     |
 | --- | --- |
-| **Groundtruth** | **Baseline** |
+| **Target** | **Baseline** |
 |<audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_054.wav"/></audio>|<audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_054.wav"/></audio>| |
-| **DSF256 Reconst** | **DSF128 Reconst** |
+| **Reconst (DSF256)** | **Reconst (DSF128)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_054.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_054.wav"/></audio>|
-| **DSF256 Raw** | **DSF128 Raw** |
+| **Propoed (DSF256, Raw)** | **Propoed (DSF128, Raw)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_054.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_054.wav"/></audio>|
-| **DSF256 SW256** | **DSF128 SW256** |
+| **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_054.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_054.wav"/></audio>|
 
 
@@ -69,34 +69,30 @@ This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on
 
 |     |     |
 | --- | --- |
-| **Groundtruth** | **Baseline** |
+| **Target** | **Baseline** |
 |<audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_075.wav"/></audio>|<audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_075.wav"/></audio>| |
-| **DSF256 Reconst** | **DSF128 Reconst** |
+| **Reconst (DSF256)** | **Reconst (DSF128)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_075.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_075.wav"/></audio>|
-| **DSF256 Raw** | **DSF128 Raw** |
+| **Propoed (DSF256, Raw)** | **Propoed (DSF128, Raw)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_075.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_075.wav"/></audio>|
-| **DSF256 SW256** | **DSF128 SW256** |
+| **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_075.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_075.wav"/></audio>|
 
 **若き日の反逆ゆえに、宇宙の中央を追放されて、惑星、地球にやってきた主人公、ベルゼバブが、宇宙船カルナークのなかで、孫に語る壮大な物語。**
 
 |     |     |
 | --- | --- |
-| **Groundtruth** | **Baseline** |
+| **Target** | **Baseline** |
 |<audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_094.wav"/></audio>| |
-| **DSF256 Reconst** | **DSF128 Reconst** |
+| **Reconst (DSF256)** | **Reconst (DSF128)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_094.wav"/></audio>|
-| **DSF256 Raw** | **DSF128 Raw** |
+| **Propoed (DSF256, Raw)** | **Propoed (DSF128, Raw)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_094.wav"/></audio>|
-| **DSF256 SW256** | **DSF128 SW256** |
+| **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_094.wav"/></audio>|
-
-## Audio samples (English)
-
-TBA
 
 
 ## Author
 
-Tomoki Hayashi  
+Tomoki Hayashi (Human Dataware Lab. Co., Ltd. & Nagoya University)  
 e-mail: hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp
