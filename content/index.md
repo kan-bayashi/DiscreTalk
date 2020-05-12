@@ -5,12 +5,17 @@ type: "index"
 
 # DiscreTalk: Text-to-Speech as a Machine Translation Problem
 
-
 ## Abstract
 
 ![](figs/overview.png)
 
-This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on neural machine translation (NMT). The proposed model consists of two components, a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate the discrete symbol sequence from a given input text. Since the VQ-VAE model can learn such a mapping in a fully-data-driven manner, we do not need to consider hyperparameters of the feature extraction required in the conventional E2E-TTS models. Thanks to the use of discrete symbols, we can use various techniques developed in NMT and automatic speech recognition (ASR) such as beam search, subwords, and fusions with a language model. Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS. The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.
+This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT).
+The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model.
+The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.
+Since the VQ-VAE model can learn such a mapping in a fully-data-driven manner, we do not need to consider hyperparameters of the feature extraction required in the conventional E2E-TTS models.
+Thanks to the use of discrete symbols, we can use various techniques developed in NMT and automatic speech recognition (ASR) such as beam search, subword units, and fusions with a language model.
+Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS.
+The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.
 
 > This paper is submitted to Interspeech 2020.
 
@@ -91,6 +96,9 @@ This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on
 | **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_094.wav"/></audio>|
 
+## Audio samples (English)
+
+Will be added.
 
 ## Author
 
