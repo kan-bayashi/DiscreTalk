@@ -5,6 +5,9 @@ type: "index"
 
 # DiscreTalk: Text-to-Speech as a Machine Translation Problem
 
+- Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University)
+- Shinji Watanabe (Johns Hopkins University)
+
 ## Abstract
 
 ![](figs/overview.png)
@@ -95,10 +98,6 @@ The experimental evaluation with the JSUT corpus shows that the proposed method 
 |<audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_094.wav"/></audio>|
 | **Propoed (DSF256, SW256)** | **Propoed (DSF128, SW256)** |
 |<audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_094.wav"/></audio>|<audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_094.wav"/></audio>|
-
-## Audio samples (English)
-
-Will be added.
 
 ## Author
 
