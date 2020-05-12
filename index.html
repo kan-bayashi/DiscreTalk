@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>Interspeech 2020 Demo</title>
+    <title>DiscreTalk: Text-to-Speech as a Machine Translation Problem</title>
     
-    <meta name="description" content="DiscreTalk: Text-to-Speech as a Machine Translation Problem Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on neural machine translation (NMT). The proposed model consists of two components, a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate the discrete symbol sequence from a given input text.">
+    <meta name="description" content="DiscreTalk: Text-to-Speech as a Machine Translation Problem Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT). The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.">
     <meta name="author" content="">
     
     <link href="https://kan-bayashi.github.io/DiscreTalk/an-old-hope.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     <link rel="icon" href="https://kan-bayashi.github.io/DiscreTalk/favicon.ico">
     <meta name="generator" content="Hugo 0.70.0" />
     
-    <link rel="alternate" type="application/atom+xml" href="https://kan-bayashi.github.io/DiscreTalk/index.xml" title="Interspeech 2020 Demo">
+    <link rel="alternate" type="application/atom+xml" href="https://kan-bayashi.github.io/DiscreTalk/index.xml" title="DiscreTalk: Text-to-Speech as a Machine Translation Problem">
     
     
     <script>
@@ -69,7 +69,7 @@
     </script>
     <header class="header">
       <nav class="nav">
-        <p class="logo"><a href="https://kan-bayashi.github.io/DiscreTalk">Interspeech 2020 Demo</a></p>
+        <p class="logo"><a href="https://kan-bayashi.github.io/DiscreTalk">DiscreTalk: Text-to-Speech as a Machine Translation Problem</a></p>
       </nav>
     </header>
     <main class="main">
@@ -83,7 +83,13 @@
   <div class="post-content"><h1 id="discretalk-text-to-speech-as-a-machine-translation-problem">DiscreTalk: Text-to-Speech as a Machine Translation Problem</h1>
 <h2 id="abstract">Abstract</h2>
 <p><img src="figs/overview.png" alt=""></p>
-<p>This paper proposes a new end-to-end text-to-speech (E2E-TTS) framework based on neural machine translation (NMT). The proposed model consists of two components, a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate the discrete symbol sequence from a given input text. Since the VQ-VAE model can learn such a mapping in a fully-data-driven manner, we do not need to consider hyperparameters of the feature extraction required in the conventional E2E-TTS models. Thanks to the use of discrete symbols, we can use various techniques developed in NMT and automatic speech recognition (ASR) such as beam search, subwords, and fusions with a language model. Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS. The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.</p>
+<p>This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT).
+The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model.
+The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.
+Since the VQ-VAE model can learn such a mapping in a fully-data-driven manner, we do not need to consider hyperparameters of the feature extraction required in the conventional E2E-TTS models.
+Thanks to the use of discrete symbols, we can use various techniques developed in NMT and automatic speech recognition (ASR) such as beam search, subword units, and fusions with a language model.
+Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS.
+The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.</p>
 <blockquote>
 <p>This paper is submitted to Interspeech 2020.</p>
 </blockquote>
@@ -313,6 +319,8 @@
 </tr>
 </tbody>
 </table>
+<h2 id="audio-samples-english">Audio samples (English)</h2>
+<p>Will be added.</p>
 <h2 id="author">Author</h2>
 <p>Tomoki Hayashi (Human Dataware Lab. Co., Ltd. &amp; Nagoya University)<br>
 e-mail: <a href="mailto:hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp">hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp</a></p>
@@ -320,7 +328,7 @@ e-mail: <a href="mailto:hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp">hayashi.tomoki@
   
 </article></main>
 <footer class="footer">
-  <span>&copy; 2020 <a href="https://kan-bayashi.github.io/DiscreTalk">Interspeech 2020 Demo</a></span>
+  <span>&copy; 2020 <a href="https://kan-bayashi.github.io/DiscreTalk">DiscreTalk: Text-to-Speech as a Machine Translation Problem</a></span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>
