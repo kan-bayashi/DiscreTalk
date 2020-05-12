@@ -17,7 +17,7 @@
       <pubDate>Thu, 07 May 2020 00:00:00 +0900</pubDate>
       
       <guid>https://kan-bayashi.github.io/DiscreTalk/</guid>
-      <description>DiscreTalk: Text-to-Speech as a Machine Translation Problem Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT). The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.</description>
+      <description>DiscreTalk: Text-to-Speech as a Machine Translation Problem  Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University) Shinji Watanabe (Johns Hopkins University)  Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT). The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.</description>
     </item>
     
   </channel>
