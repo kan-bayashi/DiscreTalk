@@ -5,6 +5,8 @@ type: "index"
 
 # DiscreTalk: Text-to-Speech as a Machine Translation Problem
 
+https://arxiv.org/abs/2005.05525
+
 - Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University)
 - Shinji Watanabe (Johns Hopkins University)
 
