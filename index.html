@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>DiscreTalk: Text-to-Speech as a Machine Translation Problem - DiscreTalk: Text-to-Speech as a Machine Translation Problem</title>
+    <title>DiscreTalk: Text-to-Speech as a Machine Translation Problem</title>
     
-    <meta name="description" content="">
+    <meta name="description" content="DiscreTalk: Text-to-Speech as a Machine Translation Problem https://arxiv.org/abs/2005.05525
+ Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University) Shinji Watanabe (Johns Hopkins University)  Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT). The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.">
     <meta name="author" content="">
     
     <link href="https://kan-bayashi.github.io/DiscreTalk/an-old-hope.min.css" rel="stylesheet">
@@ -63,30 +64,272 @@
       }
     </script>
   </head>
-  <body class="list home">
+  <body class="single">
     <script>
       setTheme();
     </script>
     <header class="header">
       <nav class="nav">
-        <h1 class="logo"><a href="https://kan-bayashi.github.io/DiscreTalk">DiscreTalk: Text-to-Speech as a Machine Translation Problem</a></h1>
+        <p class="logo"><a href="https://kan-bayashi.github.io/DiscreTalk">DiscreTalk: Text-to-Speech as a Machine Translation Problem</a></p>
       </nav>
     </header>
     <main class="main">
 
-<header class="page-header"><h1>DiscreTalk: Text-to-Speech as a Machine Translation Problem</h1></header>
 
-<article class="first-entry">
-  <header class="entry-header">
-    <h2></h2>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+    <div class="post-meta">May 7, 2020</div>
   </header>
-  <section class="entry-content">
-   <p>DiscreTalk: Text-to-Speech as a Machine Translation Problem  Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University) Shinji Watanabe (Johns Hopkins University)  Abstract This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT). The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model. The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text....</p>
-  </section>
-  <footer class="entry-footer">
-    <time>May 7, 2020</time>
-  </footer>
-  <a class="entry-link" href="https://kan-bayashi.github.io/DiscreTalk/"></a>
+  <div class="post-content"><h1 id="discretalk-text-to-speech-as-a-machine-translation-problem">DiscreTalk: Text-to-Speech as a Machine Translation Problem</h1>
+<p><a href="https://arxiv.org/abs/2005.05525">https://arxiv.org/abs/2005.05525</a></p>
+<ul>
+<li>Tomoki Hayashi (Human Dataware Lab. Co., Ltd. / Nagoya University)</li>
+<li>Shinji Watanabe (Johns Hopkins University)</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p><img src="figs/overview.png" alt=""></p>
+<p>This paper proposes a new end-to-end text-to-speech (E2E-TTS) model based on neural machine translation (NMT).
+The proposed model consists of two components; a non-autoregressive vector quantized variational autoencoder (VQ-VAE) model and an autoregressive Transformer-NMT model.
+The VQ-VAE model learns a mapping function from a speech waveform into a sequence of discrete symbols, and then the Transformer-NMT model is trained to estimate this discrete symbol sequence from a given input text.
+Since the VQ-VAE model can learn such a mapping in a fully-data-driven manner, we do not need to consider hyperparameters of the feature extraction required in the conventional E2E-TTS models.
+Thanks to the use of discrete symbols, we can use various techniques developed in NMT and automatic speech recognition (ASR) such as beam search, subword units, and fusions with a language model.
+Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS.
+The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.</p>
+<blockquote>
+<p>This paper is submitted to Interspeech 2020.</p>
+</blockquote>
+<h2 id="audio-samples-japanese">Audio samples (Japanese)</h2>
+<ul>
+<li><strong>Target</strong>: Target speech downsampled to 24k Hz.</li>
+<li><strong>Baseline</strong>: Baseline system (Transformer-TTS + Parallel WaveGAN).</li>
+<li><strong>Reconst (DSF128)</strong>: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 128.</li>
+<li><strong>Reconst (DSF256)</strong>: Reconstructed speech by the proposed VQ-VAE with downsampling factor = 256.</li>
+<li><strong>Propoed (DSF128, Raw)</strong>: The proposed method with downsampling factor = 128 and raw discrete symbols as the target of the NMT model.</li>
+<li><strong>Propoed (DSF256, Raw)</strong>: The proposed method with downsampling factor = 256 and raw discrete symbols as the target of the NMT model.</li>
+<li><strong>Propoed (DSF128, SW256)</strong>: The proposed method with downsampling factor = 128 and subword units (#subword units = 256) as the target of the NMT model.</li>
+<li><strong>Propoed (DSF256, SW256)</strong>: The proposed method with downsampling factor = 256 and subword units (#subword units = 256) as the target of the NMT model.</li>
+</ul>
+<p><strong>軽妙洒脱なナレーションから、情緒感溢れる語りまで、幅広い表現力を持つ。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><strong>Baseline</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_011.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_011.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Reconst (DSF256)</strong></td>
+<td><strong>Reconst (DSF128)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_011.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_011.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, Raw)</strong></td>
+<td><strong>Propoed (DSF128, Raw)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_011.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_011.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, SW256)</strong></td>
+<td><strong>Propoed (DSF128, SW256)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_011.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_011.wav"/></audio></td>
+</tr>
+</tbody>
+</table>
+<p><strong>当時、あやしいワールドに常駐していた擬古猫が、空白にて発表。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><strong>Baseline</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_053.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_053.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Reconst (DSF256)</strong></td>
+<td><strong>Reconst (DSF128)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_053.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_053.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, Raw)</strong></td>
+<td><strong>Propoed (DSF128, Raw)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_053.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_053.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, SW256)</strong></td>
+<td><strong>Propoed (DSF128, SW256)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_053.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_053.wav"/></audio></td>
+</tr>
+</tbody>
+</table>
+<p><strong>裕福なニューヨーカー達は、グレーヴセンド、競馬場や、シープシェッドベイ、競馬場などに集い、海沿いの高級レストランや、ホテルを利用した。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><strong>Baseline</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_054.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_054.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Reconst (DSF256)</strong></td>
+<td><strong>Reconst (DSF128)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_054.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_054.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, Raw)</strong></td>
+<td><strong>Propoed (DSF128, Raw)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_054.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_054.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, SW256)</strong></td>
+<td><strong>Propoed (DSF128, SW256)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_054.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_054.wav"/></audio></td>
+</tr>
+</tbody>
+</table>
+<p><strong>楽曲のセンターポジションは、エーケービーフォーティーエイトの、高橋みなみが務めた。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><strong>Baseline</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_075.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_075.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Reconst (DSF256)</strong></td>
+<td><strong>Reconst (DSF128)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_075.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_075.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, Raw)</strong></td>
+<td><strong>Propoed (DSF128, Raw)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_075.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_075.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, SW256)</strong></td>
+<td><strong>Propoed (DSF128, SW256)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_075.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_075.wav"/></audio></td>
+</tr>
+</tbody>
+</table>
+<p><strong>若き日の反逆ゆえに、宇宙の中央を追放されて、惑星、地球にやってきた主人公、ベルゼバブが、宇宙船カルナークのなかで、孫に語る壮大な物語。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><strong>Baseline</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/raw/VOICEACTRESS100_094.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/baseline/VOICEACTRESS100_094.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Reconst (DSF256)</strong></td>
+<td><strong>Reconst (DSF128)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_reconst/VOICEACTRESS100_094.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_reconst/VOICEACTRESS100_094.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, Raw)</strong></td>
+<td><strong>Propoed (DSF128, Raw)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_char/VOICEACTRESS100_094.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_char/VOICEACTRESS100_094.wav"/></audio></td>
+</tr>
+<tr>
+<td><strong>Propoed (DSF256, SW256)</strong></td>
+<td><strong>Propoed (DSF128, SW256)</strong></td>
+</tr>
+<tr>
+<td><audio controls="" ><source src="wav/jsut/dsf256_sw256/VOICEACTRESS100_094.wav"/></audio></td>
+<td><audio controls="" ><source src="wav/jsut/dsf128_sw256/VOICEACTRESS100_094.wav"/></audio></td>
+</tr>
+</tbody>
+</table>
+<h2 id="author">Author</h2>
+<p>Tomoki Hayashi (Human Dataware Lab. Co., Ltd. &amp; Nagoya University)<br>
+e-mail: <a href="mailto:hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp">hayashi.tomoki@g.sp.m.is.nagoya-u.ac.jp</a></p>
+</div>
+  
 </article></main>
 <footer class="footer">
   <span>&copy; 2020 <a href="https://kan-bayashi.github.io/DiscreTalk">DiscreTalk: Text-to-Speech as a Machine Translation Problem</a></span>
