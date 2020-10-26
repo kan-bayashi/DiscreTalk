@@ -22,8 +22,6 @@ Thanks to the use of discrete symbols, we can use various techniques developed i
 Furthermore, we can avoid an over smoothing problem of predicted features, which is one of the common issues in TTS.
 The experimental evaluation with the JSUT corpus shows that the proposed method outperforms the conventional Transformer-TTS model with a non-autoregressive neural vocoder in naturalness, achieving the performance comparable to the reconstruction of the VQ-VAE model.
 
-> This paper is submitted to Interspeech 2020.
-
 ## Audio samples (Japanese)
 
 - **Target**: Target speech downsampled to 24k Hz.
